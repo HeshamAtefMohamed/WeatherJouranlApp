@@ -25,5 +25,6 @@ app.use(express.static('website'));
 //to setup server it's used listen method and take two parameter port num and callbak fun
 app.listen(port, ()=>{
     //feedback from console.log to ensure that the server is running
-    console.log("the server is running clearly at port:", port)
-})
+    console.log("the server is running clearly at port:",port)
+                    });
+
