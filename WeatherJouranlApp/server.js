@@ -28,3 +28,14 @@ app.listen(port, ()=>{
     console.log("the server is running clearly at port:",port)
                     });
 
+// Second initialize post and get requests
+
+//init get request by two route /getData ,and callback fun with two arrguments
+app.get("/getData",(req,res)=>{
+    console.log("The server receives a get request")
+});
+
+//init post req by the same technique as get req
+app.post("/reciveData", (req,res)=>{
+    console.log("The server receives a post request")
+});
