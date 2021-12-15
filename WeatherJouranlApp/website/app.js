@@ -25,7 +25,8 @@ let newDate = d.getMonth()+'.'+ d.getDate()+'.'+ d.getFullYear();
             const data=await res.json();
             // make a variable to get the required info from the coming data(temperature)
             const temp=data.main.temp;
-            
+        
+        
 
             
 
