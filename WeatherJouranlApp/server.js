@@ -22,7 +22,7 @@ app.use(express.static('website'));
 
 
 // Setup Server
-//to setup server it's used listen method and take two parameter port num and callbak fun
+//to setup and run the server, it's used listen method and take two parameter a port num and a callbak fun
 app.listen(port, ()=>{
     //feedback from console.log to ensure that the server is running
     console.log("the server is running clearly at port:",port)
@@ -30,12 +30,18 @@ app.listen(port, ()=>{
 
 // Second initialize post and get requests
 
-//init get request by two route /getData ,and callback fun with two arrguments
-app.get("/getData",(req,res)=>{
-    console.log("The server receives a get request")
-});
+//init get requests by two arguments,  route ,and callback fun for server side
 
-//init post req by the same technique as get req
-app.post("/reciveData", (req,res)=>{
-    console.log("The server receives a post request")
-});
+    //use the post request to save the data that sent from the client side
+         app.post("/saveData", (req,res)=>{
+            //to save the coming data at the projectData object
+            projectData=req.body;
+            console.log("The server received a post request");
+         });
+
+    //use the get request to send the data that client side requested 
+        app.get("/getData",(req,res)=>{
+            // to send the required data
+                res.send(projectData)
+                console.log("The server received a get request")
+        });
