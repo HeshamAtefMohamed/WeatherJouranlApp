@@ -11,12 +11,12 @@ const bodyParser=require("body-parser")
 // Start up an instance of app
 const app= express()
 /* Middleware*/
-//Here we are configuring express to use body-parser as middle-ware.
+//Here we are  configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 // Cors for cross origin allowance
-app.use(cors())
+app.use(cors())  
 // Initialize the main project folder
 app.use(express.static('website'));
 
@@ -25,8 +25,8 @@ app.use(express.static('website'));
 //to setup and run the server, it's used listen method and take two parameter a port num and a callbak fun
 app.listen(port, ()=>{
     //feedback from console.log to ensure that the server is running
-    console.log("the server is running clearly at port:",port)
-                    });
+    console.log("server is running clearly at port:",port)
+                    }); 
 
 // Second initialize post and get requests
 
