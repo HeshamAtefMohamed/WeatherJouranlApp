@@ -1,7 +1,7 @@
 /* Global Variables */
 // set a variable for api key  
 const apiKey="b0bacaabb7fdad1e4acc8f5acc90f4c7";
-// Create a new date instance dynamically with JS
+// Create a new date instance dynamically with JS     
 let d = new Date();
 let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
 
@@ -12,26 +12,12 @@ let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
         const generateButton=document.querySelector("#generate");
         // set an event from an  event listener click& async fun on the button 
         generateButton.addEventListener("click",async()=>{
-            //get the zipCode
-                const zipCode=document.querySelector("#zip");
-            //get the felling 
-                const feelings=document.querySelector("#feelings");
-            // set a variable for call link of api with zipCode & apiKey with units following metric    
-                const apiLink=`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=metric`;
+        
         /*to ensure every thing works clearly, use try and catch
-        If ok then try will running, else then catch will run*/ 
-        try{            
-        //the main usage for this fun is when click the button, entered data is collected
-            // use fetch method to get data
-                const res= await fetch(apiLink)
-            //transform the the collected data form stream form to JS object form by json"pasrsing"
-            //await is for an async operation 
-                const resData=await res.json();
-            // make a variable to get the required info from the coming resData(temperature)
-                const temp=resData.main.temp;
-            //check step, data is collected successfully
-                console.log("Data is successfully returned from the external API.");
-
+        If ok then try will running, else then catch will run*/  
+        try{
+            // set a variable for getWeatherData fun
+                const temp=  getWeatherData(zipCode);        
         //use fetch request to send requests to server side with sytax"https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch"
             //As /saveData endpoint & post request
             fetch('/saveData', {
@@ -65,3 +51,23 @@ let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
                 };     
         
         });
+
+async function getWeatherData(zipCode){
+    // set a variable for call link of api with zipCode & apiKey with units following metric    
+        const apiLink=`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode}&appid=${apiKey}&units=metric`
+    //get the zipCode value   
+        const zipCode=document.querySelector("#zip").value;
+    //get the felling 
+        const feelings=document.querySelector("#feelings");
+    //the main usage for this fun is when click the button, entered data is collected
+        // use fetch method to get data
+            const res= await fetch(apiLink)
+        //transform the the collected data form stream form to JS object form by json"pasrsing"
+            //await is for an async operation 
+                const resData=await res.json();
+            // make a variable to get the required info from the coming resData(temperature)
+                const temp=resData.main.temp;
+            //check step, data is collected successfully
+                console.log("Data is successfully returned from the external API.");
+        
+};
