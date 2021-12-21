@@ -8,7 +8,7 @@ body{
     grid-auto-rows: minmax(150px, auto);
     /* grid-template-columns:  */
     height:100vh;
-    background: #f23557;
+    background: #474344;
     color: #f0d43a;
     justify-content: center;
     grid-gap: 1em;
@@ -65,10 +65,10 @@ input{
 }
 
 button{
-    width: 400px;
-    height: 100px;
-    background: #3b4a6b;
-    color: #f0d43a;
+    width: 200px;
+    height: 80px;
+    background: #092e85;
+    color: #bb9f00;
     font-size: 26px;
     font-family: 'Oswald', sans-serif;
     border: none;
