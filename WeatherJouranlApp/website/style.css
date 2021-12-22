@@ -4,9 +4,9 @@ body{
 }
 
 #app{
-    display: grid;
-    grid-auto-rows: minmax(150px, auto);
-    /* grid-template-columns:  */
+    display: flex;
+  flex-direction: column;
+  grid-auto-rows: minmax(150px, auto);
     height:100vh;
     background: #474344;
     color: #f0d43a;
@@ -17,11 +17,13 @@ body{
 }
 
 .holder{
+  
 
 }
 
 .entry{
-    background: rgba(59, 74, 107, .4);
+    background: rgba(19, 20, 22, 0.4);
+    min-height: 100px;
 }
 
 #entryHolder{
@@ -41,7 +43,9 @@ body{
 }
 
 .headline {
-
+    font-size: 45px;
+    color: black;
+    text-align: center;
 }
 .title{
 
@@ -73,7 +77,7 @@ button{
     font-family: 'Oswald', sans-serif;
     border: none;
     box-shadow: 2px 4px 5px #444;
-}
+}   
 h1{
     font-size: 36px;
 }
