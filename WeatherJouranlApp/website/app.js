@@ -10,7 +10,7 @@ const apiUrl ='http://api.openweathermap.org/data/2.5/weather?zip=';
   
 // Create a new date instance dynamically with JS
 let d = new Date();
-let newDate = d.getMonth()+1+'.'+ d.getDate()+'.'+ d.getFullYear();
+let newDate = d.getMonth()+1+'/'+ d.getDate()+'/'+ d.getFullYear();
 
 //get the generate button
 const generate=document.querySelector("#generate");
@@ -77,10 +77,9 @@ const updateUi= async()=>{
     //run the solution
     try{
         const requiredData = await req.json();
-        temp.innerHTML="Tempreture is"+ requiredData.temp;
-        date.innerHTML="Date is"+  requiredData.date;
-        feelings.innerHtml="Feelings is "+  requiredData.feelings;
-
+        temp.innerHTML="Tempreture is: " + requiredData.temp + " Celsius ";
+        date.innerHTML="Date is: "+  requiredData.date;
+        content.innerHTML="My feeling is " +  requiredData.feelings;
     }
     //if there was an error
     catch(error){
