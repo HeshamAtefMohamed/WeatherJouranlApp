@@ -40,7 +40,7 @@ init get & post requests by two arguments (route,callback fun) for server side*/
         //built getData fun
         function addData(req,res){
         /*save the required data in projectData object
-        temp, date, and feelings(response   )
+        temp, date, and feelings(response)
         */
             projectData = {
                 temp: req.body.temp,
